@@ -64,8 +64,158 @@ const TESTIMONIALS = [
 ];
 
 export default function Home() {
+  const jsonLdOrganization = {
+    "@context": "https://schema.org",
+    "@type": "LegalService",
+    name: "Renan Mourão Advocacia",
+    alternateName: "Escritório Renan Mourão",
+    url: "https://renanmouraoadvocacia.com.br",
+    logo: "https://renanmouraoadvocacia.com.br/favicon.ico",
+    description:
+      "Escritório de advocacia especializado em Adjudicação Compulsória, Recuperação de Contas Digitais, Revisão de Juros Abusivos e Divórcio Extrajudicial.",
+    telephone: "+55-45-99951-7673",
+    email: "mourao.adv07@gmail.com",
+    priceRange: "$$",
+    currenciesAccepted: "BRL",
+    paymentAccepted: "Dinheiro, Cartão, Pix, Transferência",
+    areaServed: {
+      "@type": "Country",
+      name: "Brasil",
+    },
+    knowsLanguage: "pt-BR",
+    sameAs: [],
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Serviços Jurídicos",
+      itemListElement: [
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Adjudicação Compulsória",
+            description:
+              "Propriedade definitiva de imóveis de forma segura para compradores com contrato quitado. Regularização e registro pleno.",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Recuperação de Contas Digitais",
+            description:
+              "Restabelecimento de acesso a perfis bloqueados, invadidos ou desativados via liminar judicial.",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Revisão de Juros Abusivos",
+            description:
+              "Revisão estratégica de contratos bancários, eliminação de cobranças indevidas e redução de saldo devedor.",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Divórcio Extrajudicial",
+            description:
+              "Solução rápida, econômica e discreta em cartório para casais em consenso sem filhos menores.",
+          },
+        },
+      ],
+    },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "5.0",
+      reviewCount: "3",
+      bestRating: "5",
+      worstRating: "1",
+    },
+  };
+
+  const jsonLdAttorney = {
+    "@context": "https://schema.org",
+    "@type": "Attorney",
+    name: "Renan Mourão",
+    url: "https://renanmouraoadvocacia.com.br",
+    telephone: "+55-45-99951-7673",
+    email: "mourao.adv07@gmail.com",
+    jobTitle: "Advogado",
+    knowsAbout: [
+      "Direito Civil",
+      "Direito Digital",
+      "Direito Bancário",
+      "Direito de Família",
+      "Adjudicação Compulsória",
+      "Recuperação de Contas Digitais",
+      "Juros Abusivos",
+      "Divórcio Extrajudicial",
+    ],
+  };
+
+  const jsonLdFaq = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "O que é adjudicação compulsória?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "A adjudicação compulsória é uma ação judicial que permite ao comprador de um imóvel obter a propriedade definitiva quando o vendedor se recusa a outorgar a escritura, mesmo após o pagamento integral do contrato.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Como recuperar uma conta hackeada do Instagram?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Através de liminar judicial baseada no Marco Civil da Internet, é possível obrigar a plataforma a restabelecer o acesso ao perfil bloqueado, invadido ou desativado indevidamente.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Como saber se estou pagando juros abusivos?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Juros são considerados abusivos quando excedem a taxa média de mercado divulgada pelo Banco Central. Uma revisão contratual pode identificar cobranças indevidas e reduzir significativamente o saldo devedor.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Quais os requisitos para o divórcio extrajudicial?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "O divórcio extrajudicial pode ser feito em cartório quando há consenso entre as partes, não existem filhos menores ou incapazes, e ambos estão de acordo com a partilha de bens. É rápido, econômico e discreto.",
+        },
+      },
+    ],
+  };
+
   return (
     <>
+      {/* JSON-LD Structured Data for SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLdOrganization),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLdAttorney),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLdFaq),
+        }}
+      />
+
       <Header />
 
       {/* ========== HERO ========== */}
