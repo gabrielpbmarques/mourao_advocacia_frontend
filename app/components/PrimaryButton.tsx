@@ -33,8 +33,13 @@ export default function PrimaryButton({
   const combinedClasses = `${baseStyles} ${sizeStyles} ${variantStyles} ${className}`;
 
   if (href) {
+    const isExternal = /^https?:\/\//.test(href);
     return (
-      <a href={href} className={combinedClasses}>
+      <a
+        href={href}
+        className={combinedClasses}
+        {...(isExternal && { target: "_blank", rel: "noopener noreferrer" })}
+      >
         {children}
       </a>
     );

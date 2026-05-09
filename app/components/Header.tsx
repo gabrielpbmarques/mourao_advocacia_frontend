@@ -81,7 +81,9 @@ export default function Header() {
             </a>
           ))}
           <a
-            href="#contato"
+            href="https://wa.me/5545999517673"
+            target="_blank"
+            rel="noopener noreferrer"
             className="ml-4 px-5 py-2 text-sm font-sans font-semibold rounded-lg transition-all duration-300 hover:shadow-[0_0_20px_rgba(197,168,128,0.2)]"
             style={{
               background: "var(--gold-accent)",
@@ -142,7 +144,9 @@ export default function Header() {
             </a>
           ))}
           <a
-            href="#contato"
+            href="https://wa.me/5545999517673"
+            target="_blank"
+            rel="noopener noreferrer"
             className="mt-2 mx-4 px-5 py-3 text-center text-sm font-sans font-semibold rounded-lg transition-all duration-300"
             style={{
               background: "var(--gold-accent)",

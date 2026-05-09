@@ -315,7 +315,7 @@ export default function Home() {
 
             {/* CTAs */}
             <div className="animate-fade-in-up opacity-0 animation-delay-300 flex flex-col sm:flex-row gap-4">
-              <PrimaryButton href="#contato" size="lg">
+              <PrimaryButton href="https://wa.me/5545999517673" size="lg">
                 Fale Conosco
                 <svg
                   width="18"
